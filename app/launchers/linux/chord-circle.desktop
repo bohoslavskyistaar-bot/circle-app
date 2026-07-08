@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Chord Circle
+Comment=Interactive circle of chords
+Exec=sh -c 'cd "$(dirname "$1")" && ./run-linux.sh' dummy %k
+Terminal=false
+Categories=Audio;Music;Education;

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Коло акордів</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="wheel-stage" aria-label="Інтерактивне коло акордів">
+        <div class="brand-row">
+          <div>
+            <p class="eyebrow">Circle of Fifths</p>
+            <h1>Коло акордів</h1>
+          </div>
+          <div class="top-actions">
+            <button class="icon-button" id="playSelected" type="button" aria-label="Програти вибраний акорд" title="Програти вибраний акорд">
+              <span aria-hidden="true">▶</span>
+            </button>
+            <div class="locale-menu">
+              <button class="locale-button" id="localeButton" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Змінити мову" title="Змінити мову">
+                <span aria-hidden="true">A/文</span>
+                <span id="localeCode">UK</span>
+              </button>
+              <div class="locale-options" id="localeOptions" role="menu" hidden>
+                <button type="button" role="menuitem" data-locale="uk">Українська</button>
+                <button type="button" role="menuitem" data-locale="en">English</button>
+                <button type="button" role="menuitem" data-locale="fr">Français</button>
+                <button type="button" role="menuitem" data-locale="es">Español</button>
+                <button type="button" role="menuitem" data-locale="pt">Português</button>
+                <button type="button" role="menuitem" data-locale="zh">中文</button>
+                <button type="button" role="menuitem" data-locale="ja">日本語</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <svg id="chordWheel" class="chord-wheel" viewBox="0 0 1000 1000" role="img" aria-label="Коло квінт з мажорними, мінорними та зменшеними акордами"></svg>
+      </section>
+
+      <aside class="details-panel" aria-live="polite">
+        <div class="panel-heading">
+          <p class="eyebrow" id="selectedFamily">Мажор</p>
+          <h2 id="selectedChord">C</h2>
+        </div>
+        <p class="note-line" id="selectedNotes">C - E - G</p>
+        <div id="keyboard" class="keyboard-wrap" aria-label="Клавіші для акорду C"></div>
+        <div class="action-row">
+          <button class="primary-button" id="panelPlay" type="button">
+            <span aria-hidden="true">▶</span>
+            <span>Програти</span>
+          </button>
+        </div>
+      </aside>
+    </main>
+
+    <div class="shade" id="shade" hidden></div>
+
+    <dialog class="chord-dialog" id="chordDialog" aria-labelledby="dialogChord">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow" id="dialogFamily">Мажор</p>
+          <h2 id="dialogChord">C</h2>
+        </div>
+      </div>
+      <p class="note-line" id="dialogNotes">C - E - G</p>
+      <div id="dialogKeyboard" class="keyboard-wrap" aria-label="Клавіші для акорду C"></div>
+      <div class="dialog-actions">
+        <button class="primary-button" id="dialogPlay" type="button">
+          <span aria-hidden="true">▶</span>
+          <span>Програти</span>
+        </button>
+        <button class="ghost-button" id="dialogCloseSecondary" type="button">Закрити</button>
+      </div>
+    </dialog>
+
+    <script src="src/app.js"></script>
+  </body>
+</html>
